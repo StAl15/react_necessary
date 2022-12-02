@@ -22,16 +22,17 @@ function App() {
   }, [])
 
   return (
-    <AuthContext.Provider value={{
-      isAuth,
-      setIsAuth,
-      setIsLoading
-    }}>
-      <BrowserRouter>
-        <Navbar />
-        <AppRouter />
-      </BrowserRouter>
-    </AuthContext.Provider>
+    
+      <AuthContext.Provider value={{
+        isAuth,
+        setIsAuth,
+        setIsLoading
+      }}>
+        <BrowserRouter>
+          <Navbar />
+          <AppRouter />
+        </BrowserRouter>
+      </AuthContext.Provider>
 
   )
 }

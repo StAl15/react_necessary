@@ -8,6 +8,7 @@ import MyModal from "../Components/UI/MyModal/MyModal"
 import PostFilter from "../Components/PostFilter"
 import PostList from "../Components/PostList"
 import Pagination from "../Components/UI/Pagination/Pagination"
+import { Pagination as PaginationMaterial } from "@mui/material"
 import PostForm from "../Components/PostForm"
 import Loader from "../Components/UI/Loader/Loader"
 import { useObserver } from "../hooks/useObserver"
@@ -69,7 +70,7 @@ function Posts() {
 
     return (
         <div className="App">
-            <MyButton style={{ marginTop: 30 }} onClick={() => setModal(true)}>
+            <MyButton sx={{ mt: 3 }} variant="outlined" onClick={() => setModal(true)}>
                 Create user
             </MyButton>
 
@@ -81,32 +82,37 @@ function Posts() {
 
             <PostFilter
                 filter={filter}
-                setFilter={setFilter} />
+                setFilter={setFilter}
+            />
 
             <MySelect
+
                 value={limit}
                 onChange={value => setLimit(value)}
                 defaultValue="Quantity elems on page"
                 options={[
-                    { value: 5, name: '5'},
-                    { value: 10, name: '10'},
-                    { value: 25, name: '25'},
-                    { value: -1, name: 'Show all'},
+                    { value: 5, name: '5' },
+                    { value: 10, name: '10' },
+                    { value: 25, name: '25' },
+                    { value: -1, name: 'Show all' },
                 ]}
             />
 
             <PostList remove={removePost} posts={sortedAndSearchedPosts} title="List posts 1" />
 
-            <div ref={lastElement} style={{ height: 20, background: 'red' }} />
+            <div ref={lastElement} />
 
             {isPostLoading &&
                 <div style={{ display: 'flex', justifyContent: 'center', marginTop: 50 }}> <Loader /> </div>
             }
 
-            <Pagination
+            {/* custom pagination */}
+            {/* <Pagination
                 page={page}
                 changePage={changePage}
-                totalPages={totalPages} />
+                totalPages={totalPages} /> */}
+            <PaginationMaterial sx={{ mt: 3, mb: 3 }} variant="outlined" color="primary" count={totalPages} page={page} onChange={changePage} />
+
 
         </div>
     );

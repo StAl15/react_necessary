@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import PostService from '../API/PostService';
 import Loader from '../Components/UI/Loader/Loader';
+import { Typography } from '@mui/material';
 
 const PostIdPage = () => {
     const params = useParams()
@@ -36,20 +37,20 @@ const PostIdPage = () => {
 
     return (
         <div>
-            <h1>You opened post page with {params.id}</h1>
+            <Typography variant="h4" gutterBottom>You opened post page with {params.id}</Typography>
             {isLoading
                 ? <Loader />
-                : <div>{post.id}. {post.title}</div>
+                : <Typography>{post.id}. {post.title}</Typography>
             }
-            <h1>Comments</h1>
+            <Typography variant='h4'>Comments</Typography>
             {isComLoading
                 ? <Loader />
                 :
                 <div>
                     {comments.map(comm =>
                         <div key={comm.id} style={{ marginTop: 15 }}>
-                            <h5>{comm.email}</h5>
-                            <div>{comm.body}</div>
+                            <Typography variant='h6'>{comm.email}</Typography>
+                            <Typography>{comm.body}</Typography>
                         </div>)}
                 </div>
             }
