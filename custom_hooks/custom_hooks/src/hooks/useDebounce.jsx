@@ -1,3 +1,5 @@
+// use to make delay while user do input 
+
 import { useCallback, useRef } from "react";
 
 export default function useDebounce(callback, delay) {

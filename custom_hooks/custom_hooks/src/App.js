@@ -9,23 +9,23 @@ import useRequest from './hooks/useRequest';
 
 function App() {
 
-  const [todos, loading, error] = useRequest(fetchTodos)
+  // const [todos, loading, error] = useRequest(fetchTodos)
 
   // const [value, setValue] = useState('')
   // const debouncedSearch = useDebounce(search, 500)
 
-  function fetchTodos() {
+  // function fetchTodos() {
 
-    return axios.get(`https://jsonplaceholder.typicode.com/todos?`)
-  }
+  //   return axios.get(`https://jsonplaceholder.typicode.com/todos?`)
+  // }
 
-  if (loading) {
-    return <h1>Is loading .....</h1>
-  }
+  // if (loading) {
+  //   return <h1>Is loading .....</h1>
+  // }
 
-  if (error) {
-    return <h1>Something went wrong while getting response</h1>
-  }
+  // if (error) {
+  //   return <h1>Something went wrong while getting response</h1>
+  // }
 
   // function search(query) {
 
@@ -48,11 +48,11 @@ function App() {
 
     <div className="App">
 
-      {todos && todos.map(todo =>
+      {/* {todos && todos.map(todo =>
         <div key={todo.id} style={{ padding: 30, border: '2px solid black' }}>
           {todo.id}. {todo.title}
         </div>
-      )}
+      )} */}
 
       {/* <div>
         <input type="text" value={value} onChange={onChange} />

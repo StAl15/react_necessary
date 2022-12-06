@@ -1,3 +1,4 @@
+// use when you want to get data from request
 import { useEffect, useState } from "react";
 
 export default function useRequest(request) {

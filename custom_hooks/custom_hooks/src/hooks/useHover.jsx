@@ -1,3 +1,4 @@
+//use when you want to change state element while mouse hovering on it
 import { useEffect, useState } from "react";
 
 export default function useHover(ref) {

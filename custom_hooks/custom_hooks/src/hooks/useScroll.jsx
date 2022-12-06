@@ -1,3 +1,4 @@
+// use to make scroll dynamic pagination
 import { useEffect } from "react";
 import { useRef } from "react";
 
